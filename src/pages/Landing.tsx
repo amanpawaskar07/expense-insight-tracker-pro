@@ -1,109 +1,77 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { 
-  TrendingUp, 
-  PieChart, 
-  Shield, 
-  Zap, 
-  Users, 
-  Star,
-  ArrowRight,
-  DollarSign,
-  BarChart,
-  Target,
-  CheckCircle,
-  ChevronDown
-} from 'lucide-react';
+import { TrendingUp, PieChart, Shield, Zap, Users, Star, ArrowRight, DollarSign, BarChart, Target, CheckCircle, ChevronDown } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-
 const Landing = () => {
   const navigate = useNavigate();
   const [scrollY, setScrollY] = useState(0);
   const [isVisible, setIsVisible] = useState({});
-
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const features = [
-    {
-      icon: TrendingUp,
-      title: "Smart Analytics",
-      description: "Get detailed insights into your spending patterns with advanced charts and reports."
-    },
-    {
-      icon: PieChart,
-      title: "Visual Reports",
-      description: "Beautiful charts and graphs that make understanding your finances effortless."
-    },
-    {
-      icon: Shield,
-      title: "Secure & Private",
-      description: "Your financial data is stored locally and never shared with third parties."
-    },
-    {
-      icon: Zap,
-      title: "Lightning Fast",
-      description: "Built with modern technology for instant responses and seamless experience."
-    },
-    {
-      icon: Target,
-      title: "Budget Tracking",
-      description: "Set budgets for different categories and track your progress in real-time."
-    },
-    {
-      icon: BarChart,
-      title: "Expense Categories",
-      description: "Organize your expenses with customizable categories for better organization."
-    }
-  ];
-
-  const testimonials = [
-    {
-      name: "Sarah Johnson",
-      role: "Financial Advisor",
-      content: "This tool has revolutionized how I track my personal expenses. The insights are incredible!",
-      rating: 5
-    },
-    {
-      name: "Mike Chen",
-      role: "Small Business Owner",
-      content: "Perfect for managing both personal and business expenses. Clean interface and powerful features.",
-      rating: 5
-    },
-    {
-      name: "Emma Davis",
-      role: "Student",
-      content: "Finally, a budgeting app that's actually easy to use. Love the visual reports!",
-      rating: 5
-    }
-  ];
-
+  const features = [{
+    icon: TrendingUp,
+    title: "Smart Analytics",
+    description: "Get detailed insights into your spending patterns with advanced charts and reports."
+  }, {
+    icon: PieChart,
+    title: "Visual Reports",
+    description: "Beautiful charts and graphs that make understanding your finances effortless."
+  }, {
+    icon: Shield,
+    title: "Secure & Private",
+    description: "Your financial data is stored locally and never shared with third parties."
+  }, {
+    icon: Zap,
+    title: "Lightning Fast",
+    description: "Built with modern technology for instant responses and seamless experience."
+  }, {
+    icon: Target,
+    title: "Budget Tracking",
+    description: "Set budgets for different categories and track your progress in real-time."
+  }, {
+    icon: BarChart,
+    title: "Expense Categories",
+    description: "Organize your expenses with customizable categories for better organization."
+  }];
+  const testimonials = [{
+    name: "Sarah Johnson",
+    role: "Financial Advisor",
+    content: "This tool has revolutionized how I track my personal expenses. The insights are incredible!",
+    rating: 5
+  }, {
+    name: "Mike Chen",
+    role: "Small Business Owner",
+    content: "Perfect for managing both personal and business expenses. Clean interface and powerful features.",
+    rating: 5
+  }, {
+    name: "Emma Davis",
+    role: "Student",
+    content: "Finally, a budgeting app that's actually easy to use. Love the visual reports!",
+    rating: 5
+  }];
   const scrollToFeatures = () => {
-    document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('features')?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+  return <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
       {/* SEO Meta Tags are handled in index.html */}
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div 
-            className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-600/20 rounded-full blur-3xl animate-pulse"
-            style={{ transform: `translateY(${scrollY * 0.5}px)` }}
-          />
-          <div 
-            className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-green-400/20 to-blue-600/20 rounded-full blur-3xl animate-pulse"
-            style={{ transform: `translateY(${scrollY * -0.3}px)` }}
-          />
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-600/20 rounded-full blur-3xl animate-pulse" style={{
+          transform: `translateY(${scrollY * 0.5}px)`
+        }} />
+          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-green-400/20 to-blue-600/20 rounded-full blur-3xl animate-pulse" style={{
+          transform: `translateY(${scrollY * -0.3}px)`
+        }} />
         </div>
 
         <div className="container mx-auto px-4 text-center relative z-10">
@@ -112,7 +80,7 @@ const Landing = () => {
               ✨ New: Advanced Analytics Dashboard
             </Badge>
             
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 bg-clip-text text-transparent leading-tight flex items-center justify-center gap-4">
+            <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 bg-clip-text text-transparent leading-tight flex items-center justify-center gap-4 md:text-6xl">
               <DollarSign className="w-12 h-12 md:w-16 md:h-16 text-blue-600" />
               Master Your
               <br />
@@ -127,21 +95,12 @@ const Landing = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <Button 
-                onClick={() => navigate('/app')}
-                size="lg"
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-              >
+              <Button onClick={() => navigate('/app')} size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                 Start Tracking Now
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               
-              <Button 
-                variant="outline" 
-                size="lg"
-                onClick={scrollToFeatures}
-                className="px-8 py-4 text-lg font-semibold border-2 hover:bg-gray-50 transition-all duration-300"
-              >
+              <Button variant="outline" size="lg" onClick={scrollToFeatures} className="px-8 py-4 text-lg font-semibold border-2 hover:bg-gray-50 transition-all duration-300">
                 Learn More
               </Button>
             </div>
@@ -183,11 +142,7 @@ const Landing = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <Card 
-                key={index}
-                className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 shadow-lg bg-gradient-to-br from-white to-gray-50"
-              >
+            {features.map((feature, index) => <Card key={index} className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 shadow-lg bg-gradient-to-br from-white to-gray-50">
                 <CardHeader>
                   <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                     <feature.icon className="w-8 h-8 text-blue-600" />
@@ -201,8 +156,7 @@ const Landing = () => {
                     {feature.description}
                   </p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -266,13 +220,10 @@ const Landing = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+            {testimonials.map((testimonial, index) => <Card key={index} className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                 <CardContent className="p-8">
                   <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                    ))}
+                    {[...Array(testimonial.rating)].map((_, i) => <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />)}
                   </div>
                   <p className="text-gray-600 mb-6 leading-relaxed italic">
                     "{testimonial.content}"
@@ -282,8 +233,7 @@ const Landing = () => {
                     <div className="text-sm text-gray-500">{testimonial.role}</div>
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -300,11 +250,7 @@ const Landing = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              onClick={() => navigate('/app')}
-              size="lg"
-              className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-            >
+            <Button onClick={() => navigate('/app')} size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
               Get Started Free
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
@@ -346,8 +292,6 @@ const Landing = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Landing;
