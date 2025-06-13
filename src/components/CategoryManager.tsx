@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
-import { Plus, Edit, Trash2, Category as CategoryIcon } from 'lucide-react';
+import { Plus, Edit, Trash2, Tag } from 'lucide-react';
 import { Category } from '@/types/expense';
 import { useToast } from '@/hooks/use-toast';
 
@@ -117,7 +117,7 @@ const CategoryManager: React.FC<CategoryManagerProps> = ({
         <CardHeader>
           <div className="flex items-center justify-between">
             <CardTitle className="flex items-center gap-2">
-              <CategoryIcon className="w-5 h-5 text-blue-600" />
+              <Tag className="w-5 h-5 text-blue-600" />
               Manage Categories
             </CardTitle>
             <Button onClick={openAddForm} className="bg-gradient-to-r from-blue-600 to-purple-600">
@@ -177,7 +177,7 @@ const CategoryManager: React.FC<CategoryManagerProps> = ({
 
           {categories.length === 0 && (
             <div className="text-center py-8 text-gray-500">
-              <CategoryIcon className="w-12 h-12 mx-auto mb-4 opacity-50" />
+              <Tag className="w-12 h-12 mx-auto mb-4 opacity-50" />
               <p>No categories yet. Add your first category to get started!</p>
             </div>
           )}
