@@ -112,7 +112,8 @@ const Landing = () => {
               ✨ New: Advanced Analytics Dashboard
             </Badge>
             
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 bg-clip-text text-transparent leading-tight">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 bg-clip-text text-transparent leading-tight flex items-center justify-center gap-4">
+              <DollarSign className="w-12 h-12 md:w-16 md:h-16 text-blue-600" />
               Master Your
               <br />
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
