@@ -1,12 +1,12 @@
-
 import React, { useState, useEffect } from 'react';
 import { format, startOfMonth, endOfMonth, subMonths, addMonths } from 'date-fns';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Plus, Download, TrendingUp, TrendingDown, DollarSign } from 'lucide-react';
+import { Plus, Download, TrendingUp, TrendingDown, DollarSign, Home } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { useNavigate } from 'react-router-dom';
 import ExpenseForm from '@/components/ExpenseForm';
 import ExpenseList from '@/components/ExpenseList';
 import CategoryManager from '@/components/CategoryManager';
@@ -17,6 +17,7 @@ import { Expense, Category, Budget, FilterOptions } from '@/types/expense';
 import { exportToCSV, getDefaultCategories } from '@/utils/expenseUtils';
 
 const Index = () => {
+  const navigate = useNavigate();
   const [expenses, setExpenses] = useState<Expense[]>([]);
   const [categories, setCategories] = useState<Category[]>(getDefaultCategories());
   const [budgets, setBudgets] = useState<Budget[]>([]);
@@ -168,6 +169,14 @@ const Index = () => {
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
+              <Button 
+                variant="outline"
+                onClick={() => navigate('/')}
+                className="border-2"
+              >
+                <Home className="w-4 h-4 mr-2" />
+                Home
+              </Button>
               <Button 
                 onClick={() => setIsFormOpen(true)}
                 className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
